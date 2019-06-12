@@ -2,6 +2,10 @@ package com.fingard.tools.stacktop.pojo;
 
 import com.fingard.tools.stacktop.util.Formats;
 
+/**
+ * @author zed
+ * 警告相关
+ */
 public class WarningRule {
 	public DoubleWarning cpu = new DoubleWarning(50d, 70d);
 
@@ -30,7 +34,7 @@ public class WarningRule {
 	}
 
 	public void updateInterval(long intervalSeconds) {
-// 5% interval
+		// 5% interval
 		ygcTime.yellow = intervalSeconds * 1000 * 5 / 100;
 		// 10% interval
 		ygcTime.red = intervalSeconds * 1000 * 10 / 100;
@@ -40,9 +44,10 @@ public class WarningRule {
 
 		safepointCount.yellow = intervalSeconds * 2;
 		safepointCount.red = intervalSeconds * 4;
-
-		safepointTime.yellow = intervalSeconds * 1000 * 5 / 100; // 5% interval
-		safepointTime.red = intervalSeconds * 1000 * 10 / 100; // 10% interval
+		// 5% interval
+		safepointTime.yellow = intervalSeconds * 1000 * 5 / 100;
+		// 10% interval
+		safepointTime.red = intervalSeconds * 1000 * 10 / 100;
 	}
 
 	public void updateOld(long max) {

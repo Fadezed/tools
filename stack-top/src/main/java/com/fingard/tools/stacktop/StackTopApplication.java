@@ -8,14 +8,12 @@ import com.fingard.tools.stacktop.util.OptionAdvanceParser;
 import com.fingard.tools.stacktop.util.Utils;
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
-//import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.*;
 
 /**
  * @author zed
  */
-//@SpringBootApplication
 public class StackTopApplication {
 	/**
 	 * 版本号
@@ -35,7 +33,6 @@ public class StackTopApplication {
 	private volatile boolean needMoreInput = false;
 	private long sleepStartTime;
 	public static void main(String[] args) {
-//		SpringApplication.run(StackTopApplication.class, args);
 		try {
 			// 1. create option parser
 			OptionParser parser = OptionAdvanceParser.createOptionParser();
@@ -180,6 +177,9 @@ public class StackTopApplication {
 		mainThread.interrupt();
 	}
 
+	/**
+	 * 终端睡眠
+	 */
 	public void interruptSleep() {
 		mainThread.interrupt();
 	}
@@ -192,6 +192,9 @@ public class StackTopApplication {
 		needMoreInput = false;
 	}
 
+	/**
+	 * 等待录入
+	 */
 	private void waitForInput() {
 		while (needMoreInput) {
 			Utils.sleep(1000);

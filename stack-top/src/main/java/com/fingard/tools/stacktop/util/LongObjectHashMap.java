@@ -309,7 +309,7 @@ public class LongObjectHashMap<V> implements LongObjectMap<V> {
 	}
 
 	private long objectToKey(Object key) {
-		return ((Long) key).longValue();
+		return (Long) key;
 	}
 
 	/**
