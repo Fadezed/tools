@@ -77,7 +77,7 @@ public class OptionAdvanceParser {
 		// commmon
 		parser.acceptsAll(Arrays.asList("help", "?", "h"), "shows this help").forHelp();
 		parser.acceptsAll(Arrays.asList("n", "iteration"),
-				"stackTop will exit after n output iterations  (defaults to unlimit)").withRequiredArg()
+				"fingardTop will exit after n output iterations  (defaults to unlimit)").withRequiredArg()
 				.ofType(Integer.class);
 		parser.acceptsAll(Arrays.asList("i", "interval", "d"),
 				"interval between each output iteration (defaults to 10s)").withRequiredArg().ofType(Integer.class);

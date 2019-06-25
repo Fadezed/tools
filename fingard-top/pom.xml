@@ -8,9 +8,9 @@
     </parent>
 
     <groupId>com.fingard.tools</groupId>
-    <artifactId>stackTop</artifactId>
+    <artifactId>fingardTop</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>stackTop</name>
+    <name>fingardTop</name>
     <description>Linux top-like JVM info and busy threads monitoring tools</description>
 
     <properties>
@@ -64,7 +64,7 @@
                             <goal>single</goal>
                         </goals>
                         <configuration>
-                            <finalName>stackTop</finalName>
+                            <finalName>fingardTop</finalName>
                             <appendAssemblyId>false</appendAssemblyId>
                         </configuration>
                     </execution>

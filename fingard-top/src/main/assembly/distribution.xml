@@ -11,12 +11,12 @@
 	
 	<files>
 		<file>
-			<source>src/main/assembly/stackTop.bat</source>
+			<source>src/main/assembly/fingardTop.bat</source>
 			<outputDirectory>/</outputDirectory>
 			<lineEnding>windows</lineEnding>
 		</file>
 		<file>
-			<source>src/main/assembly/stackTop.sh</source>
+			<source>src/main/assembly/fingardTop.sh</source>
 			<outputDirectory>/</outputDirectory>
 			<fileMode>0755</fileMode>
 			<lineEnding>unix</lineEnding>
@@ -28,7 +28,7 @@
 			<lineEnding>unix</lineEnding>
 		</file>
 		<file>
-			<source>${project.build.directory}/stackTop.jar</source>
+			<source>${project.build.directory}/fingardTop.jar</source>
 			<outputDirectory>/</outputDirectory>
 		</file>
 	</files>

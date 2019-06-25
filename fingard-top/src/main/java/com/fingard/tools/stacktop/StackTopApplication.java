@@ -164,7 +164,7 @@ public class StackTopApplication {
 	public static void printHelper(OptionParser parser) {
 		try {
 			System.out.println("StackTop " + VERSION + " - java monitoring for the command-line");
-			System.out.println("Usage: stackTop.sh [options...] <PID>");
+			System.out.println("Usage: fingardTop.sh [options...] <PID>");
 			System.out.println("");
 			parser.printHelpOn(System.out);
 		} catch (IOException ignored) {

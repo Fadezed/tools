@@ -67,7 +67,7 @@ public class VmDetailView {
 
 		Formats.clearTerminal();
 
-		// 计算stackTop自身消耗
+		// 计算fingardTop自身消耗
 		long iterationStartTime = 0;
 		long iterationStartCpu = 0;
 		if (isDebugCost) {

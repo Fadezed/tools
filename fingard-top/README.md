@@ -1,22 +1,22 @@
 # 1. 概述
 
-对应于观看“OS指标及繁忙进程”的top，stackTop就是观察“JVM进程指标及其繁忙线程”的首选工具。
+对应于观看“OS指标及繁忙进程”的top，fingardTop就是观察“JVM进程指标及其繁忙线程”的首选工具。
 
-**JVM进程信息**：收集了进程在OS层面和JVM层面的所有重要指标。大家为什么喜欢用[dstat](http://dag.wiee.rs/home-made/dstat/)看OS状态，因为它将你想看的数据全都收集呈现眼前了，stackTop也是这样的风格。
+**JVM进程信息**：收集了进程在OS层面和JVM层面的所有重要指标。大家为什么喜欢用[dstat](http://dag.wiee.rs/home-made/dstat/)看OS状态，因为它将你想看的数据全都收集呈现眼前了，fingardTop也是这样的风格。
 
-**繁忙线程信息**： 对比于“先top -H 列出线程，再执行jstack拿到全部线程，再手工换算十与十六进制的线程号”的繁琐过程，stackTop既方便，又可以连续跟踪，更不会因为jstack造成JVM停顿。
+**繁忙线程信息**： 对比于“先top -H 列出线程，再执行jstack拿到全部线程，再手工换算十与十六进制的线程号”的繁琐过程，fingardTop既方便，又可以连续跟踪，更不会因为jstack造成JVM停顿。
 
-对于超出正常范围的值，stackTop还很贴心的进行了变色显示。
+对于超出正常范围的值，fingardTop还很贴心的进行了变色显示。
 
 运行时不造成应用停顿，可在线上安全使用。
 
 **常用场景：**
 
-1. 性能问题快速定位，用stackTop显示出CPU繁忙或内存消耗大的线程，再实时交互翻查该线程的statk trace。
+1. 性能问题快速定位，用fingardTop显示出CPU繁忙或内存消耗大的线程，再实时交互翻查该线程的statk trace。
 
-2. 压测场景，用stackTop实时反馈JVM进程状态，类似于用dstast对操作系统指标的监控。
+2. 压测场景，用fingardTop实时反馈JVM进程状态，类似于用dstast对操作系统指标的监控。
 
-3. 生产环境，当应用出现问题时，用stackTop快速了解进程的状态。还可与监控系统结合，发现指标(如CPU、超时请求数)超出阈值时，用钩子脚本调用stackTop来纪录事发地的状况。
+3. 生产环境，当应用出现问题时，用fingardTop快速了解进程的状态。还可与监控系统结合，发现指标(如CPU、超时请求数)超出阈值时，用钩子脚本调用fingardTop来纪录事发地的状况。
 
 
 
@@ -27,14 +27,14 @@
 ## 2.1 概述
 
 
-stackTop运行所需权限与jstack相同，必须与目标JVM使用相同的JDK版本运行，必须与目标JVM使用相同用户运行。如果仍有问题，请看后面的执行问题排查章节。
+fingardTop运行所需权限与jstack相同，必须与目标JVM使用相同的JDK版本运行，必须与目标JVM使用相同用户运行。如果仍有问题，请看后面的执行问题排查章节。
 
 ```
 // 占用CPU最多的线程
-./stackTop.sh <PID> 
+./fingardTop.sh <PID> 
 
 // 打印选项，每个版本的参数会有变动，特别是模式参数，以help信息为准
-./stackTop.sh -h
+./fingardTop.sh -h
 
 ```
 
@@ -45,16 +45,16 @@ stackTop运行所需权限与jstack相同，必须与目标JVM使用相同的JDK
 
 ```
 // 按时间区间内，线程占用的CPU排序，默认显示前10的线程，默认每10秒打印一次
-./stackTop.sh <PID>
+./fingardTop.sh <PID>
 
 // 按时间区间内，线程占用的SYS CPU排序
-./stackTop.sh -m syscpu <PID>
+./fingardTop.sh -m syscpu <PID>
 
 // 按线程从启动以来的总占用CPU来排序
-./stackTop.sh -m totalcpu <PID>
+./fingardTop.sh -m totalcpu <PID>
 
 // 按线程从启动以来的总SYS CPU排序
-./stackTop.sh -m totalsyscpu <PID>
+./fingardTop.sh -m totalsyscpu <PID>
 ```
 
 
@@ -116,10 +116,10 @@ stackTop运行所需权限与jstack相同，必须与目标JVM使用相同的JDK
 
 ```
 // 线程分配内存的速度排序，默认显示前10的线程，默认每10秒打印一次
-./stackTop.sh -m 5 <PID>
+./fingardTop.sh -m 5 <PID>
 
 // 按线程的总内存分配而不是打印间隔内的内存分配来排序
-./stackTop.sh -m 6 <PID>
+./fingardTop.sh -m 6 <PID>
 ```
 
 ### 2.3.2 输出示例
@@ -156,37 +156,37 @@ stackTop运行所需权限与jstack相同，必须与目标JVM使用相同的JDK
 
 ```
 // 打印其他选项
-./stackTop.sh -h
+./fingardTop.sh -h
 
 // 结果输出到文件
-./stackTop.sh <PID> > /tmp/stackTop.log
+./fingardTop.sh <PID> > /tmp/fingardTop.log
 
 // 每5秒打印一次（默认10秒）
-./stackTop.sh -i 5 <PID>
+./fingardTop.sh -i 5 <PID>
 
 // 打印20次后退出
-./stackTop.sh -n 20 <PID>
+./fingardTop.sh -n 20 <PID>
 
 // 显示前100的线程（默认10）
-./stackTop.sh -l 100 <PID>
+./fingardTop.sh -l 100 <PID>
 
 // 不带变色与换页控制码的console模式，适合不支持控制码的终端。在Windows及输出到文件时将默认使用次此模式
-./stackTop.sh -o clean <PID>
+./fingardTop.sh -o clean <PID>
 
-// key:value式的文本模式，适用于第三方工具采集stackTop的输出结果
-./stackTop.sh -o text <PID>
+// key:value式的文本模式，适用于第三方工具采集fingardTop的输出结果
+./fingardTop.sh -o text <PID>
 
 // 只采集JVM信息，不采集繁忙线程信息
-./stackTop.sh -c jvm <PID>
+./fingardTop.sh -c jvm <PID>
 
 // 只采集繁忙线程信息，不采集JVM信息
-./stackTop.sh -c thread <PID>
+./fingardTop.sh -c thread <PID>
 
 // 只显示线程名包含worker字样的线程，在热点线程与实时交互打印线程时都会过滤（1.0.6版开始忽略大小写）
-./stackTop.sh -f worker <PID>
+./fingardTop.sh -f worker <PID>
 
 // 更宽的120字节的屏幕 （默认100）
-./stackTop.sh -w 120 <PID> > /tmp/stackTop.log
+./fingardTop.sh -w 120 <PID> > /tmp/fingardTop.log
 ```
 
 
@@ -323,15 +323,15 @@ Thread Id and name of all live threads:
 
 1. JDK版本错误或tools.jar不存在
 
-stackTop使用的java为JAVA_HOME/bin/java, 需要JDK7及以上，但"不要求"与目标应用的JVM使用相同的JDK版本。
+fingardTop使用的java为JAVA_HOME/bin/java, 需要JDK7及以上，但"不要求"与目标应用的JVM使用相同的JDK版本。
 
-stackTop需要依赖JAVA_HOME/lib/tools.jar
+fingardTop需要依赖JAVA_HOME/lib/tools.jar
 
 JAVA_HOME的定位，通过读取环境变量JAVA_HOME，如果没有定义，则尝试通过"which java"定位java从而获得相对路径。
 
 2. 不能连入目标jvm
 
-再次，stackTop 使用JVM attach机制 连入PID 并获得JMX的本地连接地址，所需权限与jstack相同， attach失败时出现如下报错
+再次，fingardTop 使用JVM attach机制 连入PID 并获得JMX的本地连接地址，所需权限与jstack相同， attach失败时出现如下报错
 
 ```
 ERROR: Could not attach to process.
@@ -343,7 +343,7 @@ ERROR: Could not attach to process.
 
 1. PID写错，进程不存在
 
-2. VM Attach时，会强制检查执行stackTop的用户，与目标JMV的用户一致，否则会抛出"well-known file is not secure"之类的异常。
+2. VM Attach时，会强制检查执行fingardTop的用户，与目标JMV的用户一致，否则会抛出"well-known file is not secure"之类的异常。
 
 如果用户有sudo权限，可以尝试切换到目标用户，并把JAVA_HOME等环境变量带到新用户。
 ```
@@ -356,7 +356,7 @@ sudo -E su - <targetUser>
 
 5. 目标JVM使用启动参数-XX:+DisableAttachMechanism禁止了attach。
 
-如果实在没有办法attach，可以考虑在原目标进程中配置JMX启动参数，设定JMX的地址与端口，然后在stackTop中指定该地址
+如果实在没有办法attach，可以考虑在原目标进程中配置JMX启动参数，设定JMX的地址与端口，然后在fingardTop中指定该地址
 
 目标进程的JVM参数：
 ```
@@ -364,10 +364,10 @@ sudo -E su - <targetUser>
  -Dcom.sun.management.jmxremote.X=false -Dcom.sun.management.jmxremote.ssl=false
 ```
 
-stackTop的命令(since 1.0.3):
+fingardTop的命令(since 1.0.3):
 
 ```
-./stackTop.sh -j 127.0.0.1:7001 <PID>
+./fingardTop.sh -j 127.0.0.1:7001 <PID>
 ```
 
 
