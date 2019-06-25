@@ -1,4 +1,4 @@
-package com.fingard.tools.stacktop.data.jmx;
+package com.fingard.tools.top.data.jmx;
 
 import com.sun.management.HotSpotDiagnosticMXBean;
 import com.sun.management.OperatingSystemMXBean;

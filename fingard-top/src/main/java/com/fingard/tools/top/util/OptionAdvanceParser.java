@@ -1,9 +1,9 @@
-package com.fingard.tools.stacktop.util;
+package com.fingard.tools.top.util;
 
-import com.fingard.tools.stacktop.StackTopApplication;
-import com.fingard.tools.stacktop.pojo.VmDetailView.ContentMode;
-import com.fingard.tools.stacktop.pojo.VmDetailView.OutputFormat;
-import com.fingard.tools.stacktop.pojo.VmDetailView.ThreadInfoMode;
+import com.fingard.tools.top.StackTopApplication;
+import com.fingard.tools.top.pojo.VmDetailView.ContentMode;
+import com.fingard.tools.top.pojo.VmDetailView.OutputFormat;
+import com.fingard.tools.top.pojo.VmDetailView.ThreadInfoMode;
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
 

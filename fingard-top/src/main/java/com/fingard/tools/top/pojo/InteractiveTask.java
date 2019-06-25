@@ -1,7 +1,7 @@
-package com.fingard.tools.stacktop.pojo;
+package com.fingard.tools.top.pojo;
 
-import com.fingard.tools.stacktop.StackTopApplication;
-import com.fingard.tools.stacktop.pojo.VmDetailView.ThreadInfoMode;
+import com.fingard.tools.top.StackTopApplication;
+import com.fingard.tools.top.pojo.VmDetailView.ThreadInfoMode;
 
 import java.io.Console;
 import java.io.IOException;

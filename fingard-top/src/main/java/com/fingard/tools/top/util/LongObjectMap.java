@@ -1,4 +1,4 @@
-package com.fingard.tools.stacktop.util;
+package com.fingard.tools.top.util;
 
 import java.util.Map;
 

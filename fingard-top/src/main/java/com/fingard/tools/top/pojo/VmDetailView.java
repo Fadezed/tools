@@ -1,10 +1,10 @@
-package com.fingard.tools.stacktop.pojo;
+package com.fingard.tools.top.pojo;
 
 import com.sun.management.OperatingSystemMXBean;
-import com.fingard.tools.stacktop.pojo.TopThreadInfo.TopCpuResult;
-import com.fingard.tools.stacktop.pojo.TopThreadInfo.TopMemoryResult;
-import com.fingard.tools.stacktop.util.Formats;
-import com.fingard.tools.stacktop.util.Utils;
+import com.fingard.tools.top.pojo.TopThreadInfo.TopCpuResult;
+import com.fingard.tools.top.pojo.TopThreadInfo.TopMemoryResult;
+import com.fingard.tools.top.util.Formats;
+import com.fingard.tools.top.util.Utils;
 
 import java.io.IOException;
 import java.lang.management.ManagementFactory;

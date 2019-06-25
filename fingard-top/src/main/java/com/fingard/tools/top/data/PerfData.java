@@ -1,6 +1,6 @@
-package com.fingard.tools.stacktop.data;
+package com.fingard.tools.top.data;
 
-import com.fingard.tools.stacktop.util.Utils;
+import com.fingard.tools.top.util.Utils;
 import sun.management.counter.Counter;
 import sun.management.counter.LongCounter;
 import sun.management.counter.perf.PerfInstrumentation;

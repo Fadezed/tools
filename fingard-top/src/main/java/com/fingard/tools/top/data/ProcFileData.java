@@ -1,4 +1,4 @@
-package com.fingard.tools.stacktop.data;
+package com.fingard.tools.top.data;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;

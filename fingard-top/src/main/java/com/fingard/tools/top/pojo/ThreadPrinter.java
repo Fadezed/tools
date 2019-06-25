@@ -1,4 +1,4 @@
-package com.fingard.tools.stacktop.pojo;
+package com.fingard.tools.top.pojo;
 
 import java.io.IOException;
 import java.lang.Thread.State;

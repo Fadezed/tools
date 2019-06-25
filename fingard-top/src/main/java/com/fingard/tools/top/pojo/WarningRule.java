@@ -1,6 +1,6 @@
-package com.fingard.tools.stacktop.pojo;
+package com.fingard.tools.top.pojo;
 
-import com.fingard.tools.stacktop.util.Formats;
+import com.fingard.tools.top.util.Formats;
 
 /**
  * @author zed

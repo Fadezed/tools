@@ -1,8 +1,8 @@
-package com.fingard.tools.stacktop.util;
+package com.fingard.tools.top.util;
 
-import com.fingard.tools.stacktop.pojo.VMInfo.Usage;
-import com.fingard.tools.stacktop.pojo.WarningRule.DoubleWarning;
-import com.fingard.tools.stacktop.pojo.WarningRule.LongWarning;
+import com.fingard.tools.top.pojo.VMInfo.Usage;
+import com.fingard.tools.top.pojo.WarningRule.DoubleWarning;
+import com.fingard.tools.top.pojo.WarningRule.LongWarning;
 
 import java.util.List;
 import java.util.Locale;

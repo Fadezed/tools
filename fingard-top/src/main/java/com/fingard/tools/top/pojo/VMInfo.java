@@ -1,11 +1,11 @@
-package com.fingard.tools.stacktop.pojo;
+package com.fingard.tools.top.pojo;
 
-import com.fingard.tools.stacktop.data.PerfData;
-import com.fingard.tools.stacktop.data.ProcFileData;
-import com.fingard.tools.stacktop.data.jmx.JmxClient;
-import com.fingard.tools.stacktop.data.jmx.JmxMemoryPoolManager;
-import com.fingard.tools.stacktop.util.Formats;
-import com.fingard.tools.stacktop.util.Utils;
+import com.fingard.tools.top.data.PerfData;
+import com.fingard.tools.top.data.ProcFileData;
+import com.fingard.tools.top.data.jmx.JmxClient;
+import com.fingard.tools.top.data.jmx.JmxMemoryPoolManager;
+import com.fingard.tools.top.util.Formats;
+import com.fingard.tools.top.util.Utils;
 import sun.management.counter.Counter;
 import sun.management.counter.LongCounter;
 import sun.management.counter.StringCounter;

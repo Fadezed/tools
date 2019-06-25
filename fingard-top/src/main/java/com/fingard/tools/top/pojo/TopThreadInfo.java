@@ -1,9 +1,9 @@
-package com.fingard.tools.stacktop.pojo;
+package com.fingard.tools.top.pojo;
 
-import com.fingard.tools.stacktop.pojo.VmDetailView.ThreadInfoMode;
-import com.fingard.tools.stacktop.util.LongObjectHashMap;
-import com.fingard.tools.stacktop.util.LongObjectMap;
-import com.fingard.tools.stacktop.util.Utils;
+import com.fingard.tools.top.pojo.VmDetailView.ThreadInfoMode;
+import com.fingard.tools.top.util.LongObjectHashMap;
+import com.fingard.tools.top.util.LongObjectMap;
+import com.fingard.tools.top.util.Utils;
 
 import java.io.IOException;
 import java.lang.management.ThreadInfo;
